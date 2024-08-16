@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.wordDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.wordDetail h2 {
+    font-size: 64px;
+    font-weight: 700;
+    font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.dark .wordDetail h2 {
+    color: #FFF;
+}
+
+.wordDetail p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #A445ED;
+    padding-left: 1px;
+    font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.play:hover circle {
+    opacity: 1;
+}
+
+.play:hover path {
+   fill: #FFF;
+}
+
+
+@media (max-width: 375px) {
+
+    .wordDetail h2 {
+        font-size: 32px;
+    }
+
+    .wordDetail p {
+        font-size: 18px;
+    }
+
+    .play svg {
+        width: 48px;
+        height: 48px;
+    }
+}

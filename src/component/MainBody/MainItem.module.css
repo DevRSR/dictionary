@@ -1,0 +1,114 @@
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+ 
+}
+
+.heading p {
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.dark .heading p {
+    color: #FFF;
+}
+
+.line {
+    width: 656px;
+    height: 1px;
+    background-color: #E9E9E9;
+}
+
+.dark .line {
+    background-color: #3a3a3a;
+}
+
+.meaning {
+  margin: 40px 0;
+}
+
+.meaning > p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #757575;
+    font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.meaning ul {
+    padding-left: 22px;
+    margin-top: 25px;
+}
+
+.meaning li {
+    margin-bottom: 13px;
+}
+
+.meaning li p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    padding-left: 5px;
+}
+
+.dark .meaning li p {
+    color: #FFF;
+}
+
+.meaning ul li::marker {
+    color: #A445ED
+}
+
+.synonyms {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 40px;
+}
+
+.synonyms p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.synonyms ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.synonyms ul p {
+    font-size: 20px;
+    font-weight: 700;
+    color: #A445ED;
+    cursor: pointer;
+}
+
+.synonyms li p:hover {
+    text-decoration: underline;
+    text-decoration-color: #A445ED;
+}
+
+@media (max-width: 375px) {
+
+    .heading p {
+      font-size: 18px;
+    }
+
+    .meaning > p {
+        font-size: 16px;
+    }
+
+    .meaning li p {
+        font-size: 15px;
+    }
+
+    .synonyms p,
+    .synonyms ul p {
+        font-size: 16px;
+    }
+}
