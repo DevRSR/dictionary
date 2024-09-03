@@ -11,7 +11,8 @@ function App() {
   const [ defaultMode, setDefaultMode ] = useState(true);
   const [ wordObj, setWordObj ] = useState(null);
   const [notFound, setNotFound] = useState(false);
-  const [word, setWord] = useState('')
+  const [word, setWord] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
 
   
  
@@ -22,6 +23,8 @@ function App() {
     wordDetail: wordObj,
     setNotFound,
     setWord,
+    setIsLoading,
+    isLoading,
     word
   }
 
@@ -40,11 +43,15 @@ function App() {
            </> )}
            {notFound && <Nofound />}
            {
-            !wordObj && !notFound && 
+            !wordObj && !notFound && !isLoading && 
             <div className="welcome-container">
               <h2>Welcome To Our Platform</h2>
               <p>Here Is Home For Finding Meaning To Word, So As To Build Your Vocabulary.</p>
             </div>
+            }
+
+            {
+              isLoading && <div className="spin"></div>
             }
         </div>
     </ModeContext.Provider>

@@ -7,7 +7,8 @@ export const ModeContext = createContext({
     wordDetail: Object,
     setNotFound: () => {},
     setWord: () => {},
-    word: String
+    setIsLoading: () => {},
+    word: String,
 })
 
 

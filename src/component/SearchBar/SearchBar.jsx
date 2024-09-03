@@ -12,26 +12,33 @@ function SearchBar() {
   const setNotFound = useContext(ModeContext).setNotFound;
   const setWord = useContext(ModeContext).setWord;
   const word = useContext(ModeContext).word;
+  const setIsLoading = useContext(ModeContext).setIsLoading;
   
   async function handleSubmit(event) {
     event.preventDefault();
     setNotFound(false);
     setWordObj(null)
-
+    setIsLoading(true)
+    
     if(!word) {
       setEmpty(true);
+      setIsLoading(false)
       return;
     }
+    
 
     try {
       const response = await fetchWordMeaning(word);
       const [meaning] = await response
       setWordObj(meaning);
+
+      // setIsLoading(false)
       
     } catch (error) {
       setNotFound(error)
     }
     setEmpty(false);
+    setIsLoading(false)
 
   }
 
@@ -45,7 +52,7 @@ function SearchBar() {
     <div className={ defaultMode ? '' : classes.dark }>
         <form className={ classes.container }  onSubmit={handleSubmit}>
             <input value={word} onChange={ handleInput } type="text" />
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 18 18" fill="none">
+            <svg className={ classes.svg } xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 18 18" fill="none">
                 <path d="M13.193 12.1323C12.9001 11.8394 12.4252 11.8394 12.1323 12.1323C11.8394 12.4252 11.8394
                 12.9001 12.1323 13.193L13.193 12.1323ZM16.0199 17.0806C16.3128 17.3734 16.7877 17.3734 17.0806
                 17.0806C17.3734 16.7877 17.3734 16.3128 17.0806 16.0199L16.0199 17.0806ZM2.95195 12.3768L3.48231

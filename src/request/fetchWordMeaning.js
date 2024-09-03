@@ -6,6 +6,7 @@ export async function fetchWordMeaning(word) {
         if(!response.ok) throw new Error('word no found')
     
         const result = await response.json();
+        console.log(result)
         return result;
 
     } catch (error) {
