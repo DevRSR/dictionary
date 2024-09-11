@@ -14,7 +14,7 @@ function MainHeader() {
     audio.play()
   }
  
-  console.log(wordObj)
+  
 
   return (
     <div>
@@ -28,7 +28,7 @@ function MainHeader() {
               <circle opacity="0.25" cx="37.5" cy="37.5" r="37.5" fill="#A445ED"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M29 27V48L50 37.5L29 27Z" fill="#A445ED"/>
             </svg>}
-            { wordObj.phonetics && <audio className={classes.audio} id='audio' controls> 
+            { !!wordObj.phonetics.length && <audio className={classes.audio} id='audio' controls> 
               <source src={ (wordObj.phonetics[1]) ? wordObj.phonetics[1].audio : wordObj.phonetics[0].audio } />
             </audio>}
           </div>
